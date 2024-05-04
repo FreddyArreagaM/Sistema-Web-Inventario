@@ -21,4 +21,8 @@ export class ProductoService {
     return this.http.post(this.urlback + '/saved-producto', producto);
   }
 
+  getProductByID(idProducto: number){
+    return this.http.get<Producto>(this.urlback + '/producto/'+ `${idProducto}`);
+  }
+
 }

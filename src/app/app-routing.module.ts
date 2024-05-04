@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductoListaComponent } from './components/producto-lista/producto-lista.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 // http:localhost:4200/productos
 const routes: Routes = [
@@ -16,6 +17,10 @@ const routes: Routes = [
 
   {
     path: 'agregar-producto', component: ProductAddComponent
+  },
+
+  {
+    path: 'editar-producto/:id', component: ProductEditComponent
   },
 
   {
