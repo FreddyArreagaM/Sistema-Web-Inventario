@@ -25,4 +25,8 @@ export class ProductoService {
     return this.http.get<Producto>(this.urlback + '/producto/'+ `${idProducto}`);
   }
 
+  updateProduct(idProducto: number, producto: Producto): Observable <Object>{
+    return this.http.put(this.urlback + '/update-producto/'+ `${idProducto}`, producto);
+  }
+
 }

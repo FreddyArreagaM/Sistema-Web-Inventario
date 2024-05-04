@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Producto } from 'src/app/modelo/producto';
 import { ProductoService } from 'src/app/services/producto.service';
 
@@ -12,7 +12,7 @@ export class ProductEditComponent implements OnInit{
   producto: Producto = new Producto();
   id: number;
 
-  constructor(private productoServicio: ProductoService, private _aRoute: ActivatedRoute){
+  constructor(private productoServicio: ProductoService, private _router: Router ,private _aRoute: ActivatedRoute){
 
   }
 
@@ -31,8 +31,24 @@ export class ProductEditComponent implements OnInit{
   }
 
   onSubmit(){
-    //editarProducto
-      
+    this.actualizarProducto();
   }
 
+  actualizarProducto(){
+    this.productoServicio.updateProduct(this.id, this.producto).subscribe(
+      {
+        next: (data) =>{
+          this.listaProducto();
+        },
+        error: (error) =>{
+          console.log(error);
+        }
+      }
+    )
+  }
+
+  listaProducto(){
+    this._router.navigate(['/productos'])
+  }
+  
 }
