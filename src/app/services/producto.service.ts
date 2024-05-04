@@ -8,25 +8,29 @@ import { Producto } from '../modelo/producto';
 })
 export class ProductoService {
 
-  private urlback= "http://localhost:8080/inventario-app"
+  private urlback= "https://inventary.up.railway.app/inventario-app"
 
   constructor(private http: HttpClient) { }
 
   //Metodo para consumir el endpoint para listar todos los productos
   getProducts(): Observable <Producto[]>{
-    return this.http.get<Producto[]>(this.urlback + '/productos');
+    return this.http.get<Producto[]>(this.urlback + '/products');
   }
 
   savedProduct(producto: Producto): Observable <Object>{
-    return this.http.post(this.urlback + '/saved-producto', producto);
+    return this.http.post(this.urlback + '/saved-product', producto);
   }
 
   getProductByID(idProducto: number){
-    return this.http.get<Producto>(this.urlback + '/producto/'+ `${idProducto}`);
+    return this.http.get<Producto>(this.urlback + '/product/'+ `${idProducto}`);
   }
 
   updateProduct(idProducto: number, producto: Producto): Observable <Object>{
-    return this.http.put(this.urlback + '/update-producto/'+ `${idProducto}`, producto);
+    return this.http.put(this.urlback + '/update-product/'+ `${idProducto}`, producto);
+  }
+
+  deleteProduct(idProducto: number): Observable <Object>{
+    return this.http.delete(this.urlback + '/delete-product/'+ `${idProducto}`);
   }
 
 }

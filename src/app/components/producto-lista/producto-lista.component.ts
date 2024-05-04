@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Producto } from 'src/app/modelo/producto';
 import { ProductoService } from 'src/app/services/producto.service';
 
@@ -11,7 +12,7 @@ import { ProductoService } from 'src/app/services/producto.service';
 export class ProductoListaComponent implements OnInit{
   productos: Producto[];
   
-  constructor(private _productoService: ProductoService, private _router: Router) { }
+  constructor(private _productoService: ProductoService, private _router: Router, private _toastrService: ToastrService) { }
 
   ngOnInit(): void {
     this.obtenerProductos();
@@ -29,6 +30,25 @@ export class ProductoListaComponent implements OnInit{
 
   editarProducto(idProducto: number){
     this._router.navigate(['editar-producto', idProducto]);
+  }
+
+  eliminarProducto(idProducto: number){
+    this._productoService.deleteProduct(idProducto).subscribe(
+      {
+        next: (data) => {
+          this._toastrService.success('Producto eliminado', 'Enhorabuena!', {
+            timeOut: 3000,
+          });
+          this.obtenerProductos();
+        },
+        error: (error) => {
+          this._toastrService.error('Intenta nuevamente', 'Oops...', {
+            timeOut: 3000,
+          });
+          //console.log(error);
+        }
+      }
+    )
   }
 
 }

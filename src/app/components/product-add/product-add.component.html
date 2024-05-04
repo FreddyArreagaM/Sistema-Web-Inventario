@@ -1,23 +1,23 @@
 <div class="container">
-    <div class="container text-center" style="margin: 30px;">
-        <h3>Agregar Producto</h3>
+    <div class="container text-center mt-5 mb-5">
+        <h2>Agregar Producto</h2>
     </div>
     <form (ngSubmit)="onSubmit()">
         <div class="mb-3">
-            <label for="descripcion" class="form-label">Descripción del Producto</label>
-            <input type="text" class="form-control" id="descripcion" name="descripcion" required="true" autocomplete="new-description" [(ngModel)]="producto.descripcion">
+            <label for="descripcion" class="form-label"> Descripción del Producto</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" autocomplete="new-description" [(ngModel)]="producto.descripcion" required>
         </div>
         <div class="mb-3">
             <label for="precio" class="form-label">Precio</label>
             <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="text" step="any" 
-                class="form-control" id="precio" name="precio" required="true" autocomplete="new-precio" [(ngModel)]="producto.precio">
+                class="form-control" id="precio" name="precio" autocomplete="new-precio" [(ngModel)]="producto.precio" required >
         </div>
         <div class="mb-3">
-            <label for="existencia" class="form-label">Existencia</label>
+            <label for="existencia" class="form-label">Stock</label>
             <input oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" type="text" 
-                class="form-control" id="existencia" name="existencia" required="true" autocomplete="new-existencia" [(ngModel)]="producto.existencia">
+                class="form-control" id="existencia" name="existencia" autocomplete="new-existencia" [(ngModel)]="producto.existencia" required>
         </div>
-        <div class="text-center">
+        <div class="text-center mt-5">
             <button type="submit" class="btn btn-success btn-sm me-3">Agregar</button>
             <a href="/" class="btn btn-danger btn-sm">Regresar</a>
         </div>
