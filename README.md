@@ -1,27 +1,13 @@
-# InventarioApp
+# Sistema Web de Inventario
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+## Stack
 
-## Development server
+### Fron-End 🚀
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+|Tipo de Tecnología|Nombre|Versión|
+|------------------|------|-------|
+| Framework Frontend | <img alt="Angular" src="https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white"/> | 16.2.0 |
+| Framework Design | <img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"/> | 5.3 |
+| UI component  | <img alt="Angular Material" src="https://github.com/No-Country/c17-40-ft-java/assets/127709400/5b9b9c5b-d0ab-4828-8ac0-074278bec5ef" width="140px"/> | 17.3.6 |
+| Toastr | <img alt="Toastr Angular" src="https://github.com/No-Country/c17-40-ft-java/assets/127709400/1139bf23-98d7-435b-80d9-5a8c6625ae32" width="90px"/> | 17.0.2 |
+| Host Frontend | <img alt="Netlify" src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" /> |  |
