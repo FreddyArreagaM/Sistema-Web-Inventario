@@ -4,9 +4,8 @@ import { ProductoListaComponent } from './components/producto-lista/producto-lis
 import { ProductAddComponent } from './components/product-add/product-add.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
-// http:localhost:4200/productos
 const routes: Routes = [
-  
+
   {
     path: '', redirectTo: 'productos', pathMatch: 'full'
   },
