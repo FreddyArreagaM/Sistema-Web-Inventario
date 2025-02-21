@@ -14,25 +14,22 @@ import java.util.Map;
 
 @RestController
 //localhost:8080/inventario-app
-@RequestMapping("inventario-app")
+@RequestMapping("inventary")
 
 //Este es el permiso que permite realizar las peticiones desde un determinado frontend
-@CrossOrigin(value = "https://inventary-app.netlify.app")
-
+@CrossOrigin(value = "${frontend.url-dev}")
 public class ControllerProduct {
-
     private static final Logger logger =
             LoggerFactory.getLogger(ControllerProduct.class);
 
     @Autowired
     private ProductService productoServicio;
 
-    //http://localhost:8080/inventario-app/productos
     //Metodo para obtener lista de productos
     @GetMapping("/products")
     public List<Product> getProducts(){
         List<Product> productos = this.productoServicio.getProducts();
-        logger.info("Productos obtenidos");
+        logger.info("Productos obtenidos {}" + productos);
         productos.forEach((producto -> logger.info(producto.toString())));
         return productos;
     }
@@ -48,9 +45,9 @@ public class ControllerProduct {
     public ResponseEntity<Product> getProductByID(@PathVariable int id) {
         Product producto = this.productoServicio.searchProductById(id);
         if(producto != null){
+            logger.info("Producto encontrado: " + producto);
             return ResponseEntity.ok(producto);
-        }
-        else{
+        } else{
             throw new RecursoNoEncontradoExcepcion("No se encontro el id " + id);
         }
     }
@@ -83,6 +80,5 @@ public class ControllerProduct {
             respuesta.put("Eliminado", Boolean.TRUE);
             return ResponseEntity.ok(respuesta);
         }
-
     }
 }
