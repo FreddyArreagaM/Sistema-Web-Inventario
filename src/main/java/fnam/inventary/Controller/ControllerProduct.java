@@ -13,11 +13,8 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-//localhost:8080/inventario-app
 @RequestMapping("inventary")
-
-//Este es el permiso que permite realizar las peticiones desde un determinado frontend
-@CrossOrigin(value = "${frontend.url-dev}")
+@CrossOrigin(value = "${frontend.url-prod}")
 public class ControllerProduct {
     private static final Logger logger =
             LoggerFactory.getLogger(ControllerProduct.class);
