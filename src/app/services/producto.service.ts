@@ -12,7 +12,6 @@ export class ProductoService {
 
   constructor(private http: HttpClient) { }
 
-  //Metodo para consumir el endpoint para listar todos los productos
   getProducts(): Observable <Producto[]>{
     return this.http.get<Producto[]>(this.urlback + '/products');
   }
@@ -32,5 +31,4 @@ export class ProductoService {
   deleteProduct(idProducto: number): Observable <Object>{
     return this.http.delete(this.urlback + '/delete-product/'+ `${idProducto}`);
   }
-
 }
