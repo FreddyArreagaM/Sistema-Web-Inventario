@@ -28,8 +28,8 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
     HttpClientModule,
     FormsModule,
     MatTooltipModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
