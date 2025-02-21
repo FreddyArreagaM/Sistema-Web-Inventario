@@ -8,7 +8,7 @@ import { Producto } from '../modelo/producto';
 })
 export class ProductoService {
 
-  private urlback= "https://inventary.up.railway.app/inventario-app"
+  private urlback= "http://localhost:8080/inventary"
 
   constructor(private http: HttpClient) { }
 
